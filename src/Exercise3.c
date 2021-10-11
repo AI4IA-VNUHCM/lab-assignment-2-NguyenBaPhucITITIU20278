@@ -15,7 +15,18 @@ int main(int argc, char *argv[]) {
 	int testcase = atoi(argv[1]);
 	
 	//Your codes here
-	
+	int main();{
+	 int n;
+    printf("\nNhap n = ");
+    scanf("%d", &n);
+    for(int i = 2; i <= n; i++){
+        while(n % i == 0){
+            printf("%d*",i); 
+            n /= i;
+        }
+        
+        }
+    
 	
 	return 0;
 }
