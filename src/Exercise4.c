@@ -21,7 +21,37 @@ int main(int argc, char *argv[]) {
 		test_array[i] = atoi(argv[i+1]);
 	}
 	//Your codes here
-	
-	
-	return 0;
+
+void printOrder(int arr[], int n, int k)
+{
+    int len1 = k, len2 = n - k;
+    int arr1[k], arr2[n - k];
+    for (int i = 0; i < k; i++)
+        arr1[i] = arr[i];
+    for (int i = k; i < n; i++)
+        arr2[i - k] = arr[i];
+    sort(arr1, arr1 + len1);
+    sort(arr2, arr2 + len2);
+    for (int i = 0; i < n; i++) {
+        if (i < k)
+            arr[i] = arr1[i];
+ 
+        else {
+            arr[i] = arr2[len2 - 1];
+            len2--;
+        }
+    }
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
+int main()
+{
+    int arr[] = { 8, 7, 9 ,2 ,1 ,5 ,2, 0      };
+    int k = 4;
+ 
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    printOrder(arr, n, k);
+ 
+    return 0;
 }
