@@ -19,7 +19,32 @@ int main(int argc, char *argv[]) {
 	float distance = atof(argv[1]);
 	int result;
 	//Your codes here
-	
+int S,t1=15000,t2,t3;
+do
+{
+printf("Nhap so km: ");
+scanf("%f",&distance);
+}while(distance<1);
+if (distance<=2)
+{
+t1= (distance*15000)/2;
+S+=t1; 
+printf("\nSo tien phai tra la: %d",S);	  
+}else if(distance>=2 && distance <=30)
+{
+t2 = (distance-2)*8000;
+S=t2+t1; 
+printf("\nSo tien phai tra la: %d",S); 
+}
+else {
+ t3 = (distance-30)*5000;
+ t2=  (distance-(distance-30)-2)*8000;
+S=t1+t2+t3; 
+printf("\nSo tien phai tra la: %d",S); 
+} 
+	return 0;
+}
 	printf("%d", result);
 	return 0;
 }
+	
